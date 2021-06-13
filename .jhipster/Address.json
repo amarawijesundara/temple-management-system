@@ -1,0 +1,40 @@
+{
+  "name": "Address",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "AddressType",
+      "fieldValues": "PERMENENT,CURRENT"
+    },
+    {
+      "fieldName": "address1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postCode",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "personalDetails",
+      "otherEntityRelationshipName": "address",
+      "relationshipName": "personalDetails"
+    }
+  ],
+  "entityTableName": "address",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210612154437"
+}

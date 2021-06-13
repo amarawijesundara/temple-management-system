@@ -1,0 +1,179 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-monk-details-heading"
+        data-cy="MonkDetailsCreateUpdateHeading"
+        jhiTranslate="templeMsApp.monkDetails.home.createOrEditLabel"
+      >
+        Create or edit a Monk Details
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.nameEnglish" for="field_nameEnglish">Name English</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nameEnglish"
+            id="field_nameEnglish"
+            data-cy="nameEnglish"
+            formControlName="nameEnglish"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.nameSinhala" for="field_nameSinhala">Name Sinhala</label>
+          <input
+            type="text"
+            class="form-control"
+            name="nameSinhala"
+            id="field_nameSinhala"
+            data-cy="nameSinhala"
+            formControlName="nameSinhala"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.pawidiNo" for="field_pawidiNo">Pawidi No</label>
+          <input type="text" class="form-control" name="pawidiNo" id="field_pawidiNo" data-cy="pawidiNo" formControlName="pawidiNo" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.samaneraNo" for="field_samaneraNo">Samanera No</label>
+          <input
+            type="text"
+            class="form-control"
+            name="samaneraNo"
+            id="field_samaneraNo"
+            data-cy="samaneraNo"
+            formControlName="samaneraNo"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.upasampadaNo" for="field_upasampadaNo"
+            >Upasampada No</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="upasampadaNo"
+            id="field_upasampadaNo"
+            data-cy="upasampadaNo"
+            formControlName="upasampadaNo"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.pawidiDate" for="field_pawidiDate">Pawidi Date</label>
+          <div class="input-group">
+            <input
+              id="field_pawidiDate"
+              data-cy="pawidiDate"
+              type="text"
+              class="form-control"
+              name="pawidiDate"
+              ngbDatepicker
+              #pawidiDateDp="ngbDatepicker"
+              formControlName="pawidiDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="pawidiDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.upasampadaDate" for="field_upasampadaDate"
+            >Upasampada Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_upasampadaDate"
+              data-cy="upasampadaDate"
+              type="text"
+              class="form-control"
+              name="upasampadaDate"
+              ngbDatepicker
+              #upasampadaDateDp="ngbDatepicker"
+              formControlName="upasampadaDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="upasampadaDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.createdDate" for="field_createdDate">Created Date</label>
+          <div class="input-group">
+            <input
+              id="field_createdDate"
+              data-cy="createdDate"
+              type="text"
+              class="form-control"
+              name="createdDate"
+              ngbDatepicker
+              #createdDateDp="ngbDatepicker"
+              formControlName="createdDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.monkDetails.updatedDate" for="field_updatedDate">Updated Date</label>
+          <div class="input-group">
+            <input
+              id="field_updatedDate"
+              data-cy="updatedDate"
+              type="text"
+              class="form-control"
+              name="updatedDate"
+              ngbDatepicker
+              #updatedDateDp="ngbDatepicker"
+              formControlName="updatedDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="updatedDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

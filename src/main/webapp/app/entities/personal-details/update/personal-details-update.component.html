@@ -1,0 +1,205 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-personal-details-heading"
+        data-cy="PersonalDetailsCreateUpdateHeading"
+        jhiTranslate="templeMsApp.personalDetails.home.createOrEditLabel"
+      >
+        Create or edit a Personal Details
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.gender" for="field_gender">Gender</label>
+          <input type="text" class="form-control" name="gender" id="field_gender" data-cy="gender" formControlName="gender" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.nic" for="field_nic">Nic</label>
+          <input type="text" class="form-control" name="nic" id="field_nic" data-cy="nic" formControlName="nic" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.nationality" for="field_nationality"
+            >Nationality</label
+          >
+          <select class="form-control" name="nationality" formControlName="nationality" id="field_nationality" data-cy="nationality">
+            <option [ngValue]="null">{{ 'templeMsApp.Nationality.null' | translate }}</option>
+            <option value="SRILANKAN">{{ 'templeMsApp.Nationality.SRILANKAN' | translate }}</option>
+            <option value="INDIAN">{{ 'templeMsApp.Nationality.INDIAN' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.ethnicity" for="field_ethnicity">Ethnicity</label>
+          <select class="form-control" name="ethnicity" formControlName="ethnicity" id="field_ethnicity" data-cy="ethnicity">
+            <option [ngValue]="null">{{ 'templeMsApp.Ethnicity.null' | translate }}</option>
+            <option value="SINHALESE">{{ 'templeMsApp.Ethnicity.SINHALESE' | translate }}</option>
+            <option value="TAMIL">{{ 'templeMsApp.Ethnicity.TAMIL' | translate }}</option>
+            <option value="MUSLIM">{{ 'templeMsApp.Ethnicity.MUSLIM' | translate }}</option>
+            <option value="BURGHER">{{ 'templeMsApp.Ethnicity.BURGHER' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.passport" for="field_passport">Passport</label>
+          <input type="text" class="form-control" name="passport" id="field_passport" data-cy="passport" formControlName="passport" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.dateOfBirth" for="field_dateOfBirth"
+            >Date Of Birth</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateOfBirth"
+              data-cy="dateOfBirth"
+              type="text"
+              class="form-control"
+              name="dateOfBirth"
+              ngbDatepicker
+              #dateOfBirthDp="ngbDatepicker"
+              formControlName="dateOfBirth"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateOfBirthDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.telephone" for="field_telephone">Telephone</label>
+          <input type="number" class="form-control" name="telephone" id="field_telephone" data-cy="telephone" formControlName="telephone" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.mobile" for="field_mobile">Mobile</label>
+          <input type="number" class="form-control" name="mobile" id="field_mobile" data-cy="mobile" formControlName="mobile" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.isBikshu" for="field_isBikshu">Is Bikshu</label>
+          <input type="checkbox" class="form-check" name="isBikshu" id="field_isBikshu" data-cy="isBikshu" formControlName="isBikshu" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.isAnagarika" for="field_isAnagarika"
+            >Is Anagarika</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="isAnagarika"
+            id="field_isAnagarika"
+            data-cy="isAnagarika"
+            formControlName="isAnagarika"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.isUpasaka" for="field_isUpasaka">Is Upasaka</label>
+          <input type="checkbox" class="form-check" name="isUpasaka" id="field_isUpasaka" data-cy="isUpasaka" formControlName="isUpasaka" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.notes" for="field_notes">Notes</label>
+          <input type="text" class="form-control" name="notes" id="field_notes" data-cy="notes" formControlName="notes" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.createdDate" for="field_createdDate"
+            >Created Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_createdDate"
+              data-cy="createdDate"
+              type="text"
+              class="form-control"
+              name="createdDate"
+              ngbDatepicker
+              #createdDateDp="ngbDatepicker"
+              formControlName="createdDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.updatedDate" for="field_updatedDate"
+            >Updated Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_updatedDate"
+              data-cy="updatedDate"
+              type="text"
+              class="form-control"
+              name="updatedDate"
+              ngbDatepicker
+              #updatedDateDp="ngbDatepicker"
+              formControlName="updatedDate"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="updatedDateDp.toggle()">
+                <fa-icon icon="calendar-alt"></fa-icon>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="templeMsApp.personalDetails.monkDetails" for="field_monkDetails"
+            >Monk Details</label
+          >
+          <select class="form-control" id="field_monkDetails" data-cy="monkDetails" name="monkDetails" formControlName="monkDetails">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                monkDetailsOption.id === editForm.get('monkDetails')!.value?.id ? editForm.get('monkDetails')!.value : monkDetailsOption
+              "
+              *ngFor="let monkDetailsOption of monkDetailsCollection; trackBy: trackMonkDetailsById"
+            >
+              {{ monkDetailsOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "templeMsApp": {
+    "emergencyContactDetails": {
+      "home": {
+        "title": "Emergency Contact Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Emergency Contact Details",
+        "createOrEditLabel": "Create or edit a Emergency Contact Details",
+        "notFound": "No Emergency Contact Details found"
+      },
+      "created": "A new Emergency Contact Details is created with identifier {{ param }}",
+      "updated": "A Emergency Contact Details is updated with identifier {{ param }}",
+      "deleted": "A Emergency Contact Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Emergency Contact Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Emergency Contact Details"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "telephone": "Telephone",
+      "email": "Email",
+      "contactType": "Contact Type",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "personalDetails": "Personal Details"
+    }
+  }
+}

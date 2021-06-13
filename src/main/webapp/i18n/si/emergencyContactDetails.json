@@ -1,0 +1,31 @@
+{
+  "templeMsApp": {
+    "emergencyContactDetails": {
+      "home": {
+        "title": "Emergency Contact Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Emergency Contact Details එකක් සාදන්න",
+        "createOrEditLabel": "Emergency Contact Details සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Emergency Contact Details හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Emergency Contact Details සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Emergency Contact Details යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Emergency Contact Details මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Emergency Contact Details {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Emergency Contact Details"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "telephone": "Telephone",
+      "email": "Email",
+      "contactType": "Contact Type",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "personalDetails": "Personal Details"
+    }
+  }
+}

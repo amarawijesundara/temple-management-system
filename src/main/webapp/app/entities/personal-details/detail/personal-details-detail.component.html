@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="personalDetails">
+      <h2 data-cy="personalDetailsDetailsHeading"><span jhiTranslate="templeMsApp.personalDetails.detail.title">Personal Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ personalDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.name">Name</span></dt>
+        <dd>
+          <span>{{ personalDetails.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.gender">Gender</span></dt>
+        <dd>
+          <span>{{ personalDetails.gender }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.nic">Nic</span></dt>
+        <dd>
+          <span>{{ personalDetails.nic }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.nationality">Nationality</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'templeMsApp.Nationality.' + personalDetails.nationality }}">{{ personalDetails.nationality }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.ethnicity">Ethnicity</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'templeMsApp.Ethnicity.' + personalDetails.ethnicity }}">{{ personalDetails.ethnicity }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.passport">Passport</span></dt>
+        <dd>
+          <span>{{ personalDetails.passport }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.dateOfBirth">Date Of Birth</span></dt>
+        <dd>
+          <span>{{ personalDetails.dateOfBirth | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ personalDetails.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.mobile">Mobile</span></dt>
+        <dd>
+          <span>{{ personalDetails.mobile }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.isBikshu">Is Bikshu</span></dt>
+        <dd>
+          <span>{{ personalDetails.isBikshu }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.isAnagarika">Is Anagarika</span></dt>
+        <dd>
+          <span>{{ personalDetails.isAnagarika }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.isUpasaka">Is Upasaka</span></dt>
+        <dd>
+          <span>{{ personalDetails.isUpasaka }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.notes">Notes</span></dt>
+        <dd>
+          <span>{{ personalDetails.notes }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ personalDetails.createdDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.updatedDate">Updated Date</span></dt>
+        <dd>
+          <span>{{ personalDetails.updatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.personalDetails.monkDetails">Monk Details</span></dt>
+        <dd>
+          <div *ngIf="personalDetails.monkDetails">
+            <a [routerLink]="['/monk-details', personalDetails.monkDetails?.id, 'view']">{{ personalDetails.monkDetails?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/personal-details', personalDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

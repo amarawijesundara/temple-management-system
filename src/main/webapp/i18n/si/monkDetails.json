@@ -1,0 +1,32 @@
+{
+  "templeMsApp": {
+    "monkDetails": {
+      "home": {
+        "title": "Monk Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Monk Details එකක් සාදන්න",
+        "createOrEditLabel": "Monk Details සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Monk Details හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Monk Details සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Monk Details යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Monk Details මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Monk Details {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Monk Details"
+      },
+      "id": "ID",
+      "nameEnglish": "Name English",
+      "nameSinhala": "Name Sinhala",
+      "pawidiNo": "Pawidi No",
+      "samaneraNo": "Samanera No",
+      "upasampadaNo": "Upasampada No",
+      "pawidiDate": "Pawidi Date",
+      "upasampadaDate": "Upasampada Date",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date"
+    }
+  }
+}

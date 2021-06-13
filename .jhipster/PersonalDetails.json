@@ -1,0 +1,105 @@
+{
+  "name": "PersonalDetails",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "Nationality",
+      "fieldValues": "SRILANKAN,INDIAN"
+    },
+    {
+      "fieldName": "ethnicity",
+      "fieldType": "Ethnicity",
+      "fieldValues": "SINHALESE,TAMIL,MUSLIM,BURGHER"
+    },
+    {
+      "fieldName": "passport",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "telephone",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isBikshu",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isAnagarika",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isUpasaka",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "notes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "monkDetails",
+      "otherEntityRelationshipName": "personalDetails",
+      "relationshipName": "monkDetails",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "personalDetails",
+      "relationshipName": "address"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "emergencyContactDetails",
+      "otherEntityRelationshipName": "personalDetails",
+      "relationshipName": "emergencyCD"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "guardianDetails",
+      "otherEntityRelationshipName": "personalDetails",
+      "relationshipName": "guardianD"
+    }
+  ],
+  "javadoc": "The PersonalDetails entity.",
+  "entityTableName": "personal_details",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210612154436"
+}

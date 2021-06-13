@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="emergencyContactDetails">
+      <h2 data-cy="emergencyContactDetailsDetailsHeading">
+        <span jhiTranslate="templeMsApp.emergencyContactDetails.detail.title">Emergency Contact Details</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.name">Name</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.address">Address</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.email">Email</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.contactType">Contact Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'templeMsApp.ContactType.' + emergencyContactDetails.contactType }}">{{
+            emergencyContactDetails.contactType
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.createdDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.updatedDate">Updated Date</span></dt>
+        <dd>
+          <span>{{ emergencyContactDetails.updatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.emergencyContactDetails.personalDetails">Personal Details</span></dt>
+        <dd>
+          <div *ngIf="emergencyContactDetails.personalDetails">
+            <a [routerLink]="['/personal-details', emergencyContactDetails.personalDetails?.id, 'view']">{{
+              emergencyContactDetails.personalDetails?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/emergency-contact-details', emergencyContactDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

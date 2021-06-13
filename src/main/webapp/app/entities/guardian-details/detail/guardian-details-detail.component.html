@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="guardianDetails">
+      <h2 data-cy="guardianDetailsDetailsHeading"><span jhiTranslate="templeMsApp.guardianDetails.detail.title">Guardian Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ guardianDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.name">Name</span></dt>
+        <dd>
+          <span>{{ guardianDetails.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.address">Address</span></dt>
+        <dd>
+          <span>{{ guardianDetails.address }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.contactType">Contact Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'templeMsApp.ContactType.' + guardianDetails.contactType }}">{{ guardianDetails.contactType }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ guardianDetails.createdDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.updatedDate">Updated Date</span></dt>
+        <dd>
+          <span>{{ guardianDetails.updatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.guardianDetails.personalDetails">Personal Details</span></dt>
+        <dd>
+          <div *ngIf="guardianDetails.personalDetails">
+            <a [routerLink]="['/personal-details', guardianDetails.personalDetails?.id, 'view']">{{
+              guardianDetails.personalDetails?.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/guardian-details', guardianDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

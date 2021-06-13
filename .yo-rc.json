@@ -41,6 +41,8 @@
     "jwtSecretKey": "YTZlNWMwZTM1MzljYThjYTE2M2IzYWQxNGQ1OWRlNzlmNzc1Nzc3ZTUxMmMyMGFjYmEzOWMwMjVmZGQxYjlmZmI4ZWM2YzdjOGNjZjIwYmJkMTg3ZGVhZmJhNGVmZjhiZjViMTFlNTg3Y2Y1MTA2ZWJiOGVmNzAzOWY0OTIwYTQ=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "si"]
+    "languages": ["en", "si"],
+    "entities": ["PersonalDetails", "Address", "EmergencyContactDetails", "GuardianDetails", "MonkDetails"],
+    "lastLiquibaseTimestamp": 1623512680000
   }
 }

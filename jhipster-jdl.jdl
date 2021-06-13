@@ -1,0 +1,90 @@
+
+
+enum Nationality{
+SRILANKAN,
+INDIAN
+}
+enum Ethnicity{
+SINHALESE,
+TAMIL,
+MUSLIM,
+BURGHER
+}
+/**
+ * The PersonalDetails entity.
+ */
+entity PersonalDetails {
+	name String,
+    gender String,
+    nic String,
+    nationality Nationality,
+    ethnicity Ethnicity,
+    passport String,
+    dateOfBirth LocalDate,
+    telephone Integer,
+    mobile Integer,
+    isBikshu Boolean,
+    isAnagarika Boolean,
+    isUpasaka Boolean,
+    notes String,
+    createdDate LocalDate,
+updatedDate LocalDate
+}
+enum AddressType {
+PERMENENT,
+CURRENT
+}
+entity Address{
+type AddressType,
+address1 String,
+address2 String,
+postCode String
+}
+enum ContactType {
+FATHER,
+MOTHER,
+BROTHER,
+SISTER
+}
+entity EmergencyContactDetails{
+name String,
+address String,
+telephone Integer,
+email String,
+contactType ContactType,
+createdDate LocalDate,
+updatedDate LocalDate
+}
+entity GuardianDetails{
+name String,
+address String,
+contactType ContactType,
+createdDate LocalDate,
+updatedDate LocalDate
+}
+entity MonkDetails{
+nameEnglish String,
+nameSinhala String,
+pawidiNo String,
+samaneraNo String,
+upasampadaNo String,
+pawidiDate LocalDate,
+upasampadaDate LocalDate
+createdDate LocalDate,
+updatedDate LocalDate
+}
+
+relationship OneToMany {
+	PersonalDetails{address} to Address,
+    PersonalDetails{emergencyCD} to EmergencyContactDetails,
+    PersonalDetails{guardianD} to GuardianDetails
+}
+
+relationship OneToOne {
+	PersonalDetails{monkDetails} to MonkDetails
+}
+
+
+dto all with mapstruct
+service all with serviceImpl
+paginate PersonalDetails with pagination

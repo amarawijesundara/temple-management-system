@@ -1,0 +1,29 @@
+{
+  "templeMsApp": {
+    "guardianDetails": {
+      "home": {
+        "title": "Guardian Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Guardian Details එකක් සාදන්න",
+        "createOrEditLabel": "Guardian Details සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Guardian Details හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Guardian Details සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Guardian Details යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Guardian Details මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Guardian Details {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Guardian Details"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "contactType": "Contact Type",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "personalDetails": "Personal Details"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "templeMsApp": {
+    "ContactType": {
+      "null": "",
+      "FATHER": "FATHER",
+      "MOTHER": "MOTHER",
+      "BROTHER": "BROTHER",
+      "SISTER": "SISTER"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+<div>
+  <h2 id="page-heading" data-cy="PersonalDetailsHeading">
+    <span jhiTranslate="templeMsApp.personalDetails.home.title">Personal Details</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="templeMsApp.personalDetails.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-personal-details"
+        [routerLink]="['/personal-details/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="templeMsApp.personalDetails.home.createLabel"> Create a new Personal Details </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="personalDetails?.length === 0">
+    <span jhiTranslate="templeMsApp.personalDetails.home.notFound">No personalDetails found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="personalDetails && personalDetails.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="name">
+            <span jhiTranslate="templeMsApp.personalDetails.name">Name</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="gender">
+            <span jhiTranslate="templeMsApp.personalDetails.gender">Gender</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nic">
+            <span jhiTranslate="templeMsApp.personalDetails.nic">Nic</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nationality">
+            <span jhiTranslate="templeMsApp.personalDetails.nationality">Nationality</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ethnicity">
+            <span jhiTranslate="templeMsApp.personalDetails.ethnicity">Ethnicity</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="passport">
+            <span jhiTranslate="templeMsApp.personalDetails.passport">Passport</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="dateOfBirth">
+            <span jhiTranslate="templeMsApp.personalDetails.dateOfBirth">Date Of Birth</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="telephone">
+            <span jhiTranslate="templeMsApp.personalDetails.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="mobile">
+            <span jhiTranslate="templeMsApp.personalDetails.mobile">Mobile</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isBikshu">
+            <span jhiTranslate="templeMsApp.personalDetails.isBikshu">Is Bikshu</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isAnagarika">
+            <span jhiTranslate="templeMsApp.personalDetails.isAnagarika">Is Anagarika</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isUpasaka">
+            <span jhiTranslate="templeMsApp.personalDetails.isUpasaka">Is Upasaka</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="notes">
+            <span jhiTranslate="templeMsApp.personalDetails.notes">Notes</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="createdDate">
+            <span jhiTranslate="templeMsApp.personalDetails.createdDate">Created Date</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="updatedDate">
+            <span jhiTranslate="templeMsApp.personalDetails.updatedDate">Updated Date</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="monkDetails.id">
+            <span jhiTranslate="templeMsApp.personalDetails.monkDetails">Monk Details</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let personalDetails of personalDetails; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/personal-details', personalDetails.id, 'view']">{{ personalDetails.id }}</a>
+          </td>
+          <td>{{ personalDetails.name }}</td>
+          <td>{{ personalDetails.gender }}</td>
+          <td>{{ personalDetails.nic }}</td>
+          <td jhiTranslate="{{ 'templeMsApp.Nationality.' + personalDetails.nationality }}">{{ personalDetails.nationality }}</td>
+          <td jhiTranslate="{{ 'templeMsApp.Ethnicity.' + personalDetails.ethnicity }}">{{ personalDetails.ethnicity }}</td>
+          <td>{{ personalDetails.passport }}</td>
+          <td>{{ personalDetails.dateOfBirth | formatMediumDate }}</td>
+          <td>{{ personalDetails.telephone }}</td>
+          <td>{{ personalDetails.mobile }}</td>
+          <td>{{ personalDetails.isBikshu }}</td>
+          <td>{{ personalDetails.isAnagarika }}</td>
+          <td>{{ personalDetails.isUpasaka }}</td>
+          <td>{{ personalDetails.notes }}</td>
+          <td>{{ personalDetails.createdDate | formatMediumDate }}</td>
+          <td>{{ personalDetails.updatedDate | formatMediumDate }}</td>
+          <td>
+            <div *ngIf="personalDetails.monkDetails">
+              <a [routerLink]="['/monk-details', personalDetails.monkDetails?.id, 'view']">{{ personalDetails.monkDetails?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/personal-details', personalDetails.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/personal-details', personalDetails.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(personalDetails)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="personalDetails && personalDetails.length > 0">
+    <div class="row justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="row justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

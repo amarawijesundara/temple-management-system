@@ -7,6 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "ආයතන",
+        "personalDetails": "Personal Details",
+        "address": "Address",
+        "emergencyContactDetails": "Emergency Contact Details",
+        "guardianDetails": "Guardian Details",
+        "monkDetails": "Monk Details",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

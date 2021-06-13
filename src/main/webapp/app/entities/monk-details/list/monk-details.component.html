@@ -1,0 +1,94 @@
+<div>
+  <h2 id="page-heading" data-cy="MonkDetailsHeading">
+    <span jhiTranslate="templeMsApp.monkDetails.home.title">Monk Details</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="templeMsApp.monkDetails.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-monk-details"
+        [routerLink]="['/monk-details/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="templeMsApp.monkDetails.home.createLabel"> Create a new Monk Details </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="monkDetails?.length === 0">
+    <span jhiTranslate="templeMsApp.monkDetails.home.notFound">No monkDetails found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="monkDetails && monkDetails.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.nameEnglish">Name English</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.nameSinhala">Name Sinhala</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.pawidiNo">Pawidi No</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.samaneraNo">Samanera No</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.upasampadaNo">Upasampada No</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.pawidiDate">Pawidi Date</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.upasampadaDate">Upasampada Date</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.createdDate">Created Date</span></th>
+          <th scope="col"><span jhiTranslate="templeMsApp.monkDetails.updatedDate">Updated Date</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let monkDetails of monkDetails; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/monk-details', monkDetails.id, 'view']">{{ monkDetails.id }}</a>
+          </td>
+          <td>{{ monkDetails.nameEnglish }}</td>
+          <td>{{ monkDetails.nameSinhala }}</td>
+          <td>{{ monkDetails.pawidiNo }}</td>
+          <td>{{ monkDetails.samaneraNo }}</td>
+          <td>{{ monkDetails.upasampadaNo }}</td>
+          <td>{{ monkDetails.pawidiDate | formatMediumDate }}</td>
+          <td>{{ monkDetails.upasampadaDate | formatMediumDate }}</td>
+          <td>{{ monkDetails.createdDate | formatMediumDate }}</td>
+          <td>{{ monkDetails.updatedDate | formatMediumDate }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/monk-details', monkDetails.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/monk-details', monkDetails.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(monkDetails)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

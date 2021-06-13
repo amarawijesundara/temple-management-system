@@ -48,6 +48,14 @@ public class CacheConfiguration {
             createCache(cm, com.temple.domain.User.class.getName());
             createCache(cm, com.temple.domain.Authority.class.getName());
             createCache(cm, com.temple.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.temple.domain.PersonalDetails.class.getName());
+            createCache(cm, com.temple.domain.PersonalDetails.class.getName() + ".addresses");
+            createCache(cm, com.temple.domain.PersonalDetails.class.getName() + ".emergencyCDS");
+            createCache(cm, com.temple.domain.PersonalDetails.class.getName() + ".guardianDS");
+            createCache(cm, com.temple.domain.Address.class.getName());
+            createCache(cm, com.temple.domain.EmergencyContactDetails.class.getName());
+            createCache(cm, com.temple.domain.GuardianDetails.class.getName());
+            createCache(cm, com.temple.domain.MonkDetails.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,28 @@
+{
+  "templeMsApp": {
+    "address": {
+      "home": {
+        "title": "Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Address එකක් සාදන්න",
+        "createOrEditLabel": "Address සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Addresses හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Address සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Address යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Address මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Address {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "id": "ID",
+      "type": "Type",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "postCode": "Post Code",
+      "personalDetails": "Personal Details"
+    }
+  }
+}

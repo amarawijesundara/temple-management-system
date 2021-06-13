@@ -1,0 +1,52 @@
+{
+  "name": "MonkDetails",
+  "fields": [
+    {
+      "fieldName": "nameEnglish",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameSinhala",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pawidiNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "samaneraNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "upasampadaNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pawidiDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "upasampadaDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "updatedDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "monk_details",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210612154440"
+}

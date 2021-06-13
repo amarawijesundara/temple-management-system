@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="monkDetails">
+      <h2 data-cy="monkDetailsDetailsHeading"><span jhiTranslate="templeMsApp.monkDetails.detail.title">Monk Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ monkDetails.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.nameEnglish">Name English</span></dt>
+        <dd>
+          <span>{{ monkDetails.nameEnglish }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.nameSinhala">Name Sinhala</span></dt>
+        <dd>
+          <span>{{ monkDetails.nameSinhala }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.pawidiNo">Pawidi No</span></dt>
+        <dd>
+          <span>{{ monkDetails.pawidiNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.samaneraNo">Samanera No</span></dt>
+        <dd>
+          <span>{{ monkDetails.samaneraNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.upasampadaNo">Upasampada No</span></dt>
+        <dd>
+          <span>{{ monkDetails.upasampadaNo }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.pawidiDate">Pawidi Date</span></dt>
+        <dd>
+          <span>{{ monkDetails.pawidiDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.upasampadaDate">Upasampada Date</span></dt>
+        <dd>
+          <span>{{ monkDetails.upasampadaDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ monkDetails.createdDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="templeMsApp.monkDetails.updatedDate">Updated Date</span></dt>
+        <dd>
+          <span>{{ monkDetails.updatedDate | formatMediumDate }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/monk-details', monkDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

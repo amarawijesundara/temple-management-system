@@ -1,0 +1,43 @@
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -18rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 18rem;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.list-group-item.active {
+  border-color: var(--light) !important;
+}
+
+::ng-deep ngb-accordion {
+  .card-header {
+    padding: 0;
+  }
+  .card-body {
+    padding: 0;
+  }
+  .card {
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+  }
+}

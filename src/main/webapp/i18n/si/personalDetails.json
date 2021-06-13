@@ -1,0 +1,42 @@
+{
+  "templeMsApp": {
+    "personalDetails": {
+      "home": {
+        "title": "Personal Details",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "නව Personal Details එකක් සාදන්න",
+        "createOrEditLabel": "Personal Details සාදන්න හෝ සංස්කරණය කරන්න",
+        "notFound": "Personal Details හමු නොවීය"
+      },
+      "created": "{{ param }} හඳුනාගැනීමෙන් නව Personal Details සාදනු ලැබේ",
+      "updated": "{{ param }} හඳුනාගැනීමෙන් Personal Details යාවත්කාලීන වේ",
+      "deleted": "{{ param }} හඳුනාගැනීමෙන් Personal Details මකා දමනු ලැබේ",
+      "delete": {
+        "question": "Personal Details {{ id }} මකා දැමීමට ඔබට විශ්වාසද?"
+      },
+      "detail": {
+        "title": "Personal Details"
+      },
+      "id": "ID",
+      "name": "Name",
+      "gender": "Gender",
+      "nic": "Nic",
+      "nationality": "Nationality",
+      "ethnicity": "Ethnicity",
+      "passport": "Passport",
+      "dateOfBirth": "Date Of Birth",
+      "telephone": "Telephone",
+      "mobile": "Mobile",
+      "isBikshu": "Is Bikshu",
+      "isAnagarika": "Is Anagarika",
+      "isUpasaka": "Is Upasaka",
+      "notes": "Notes",
+      "createdDate": "Created Date",
+      "updatedDate": "Updated Date",
+      "monkDetails": "Monk Details",
+      "address": "Address",
+      "emergencyCD": "Emergency CD",
+      "guardianD": "Guardian D"
+    }
+  }
+}

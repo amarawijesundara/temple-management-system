@@ -1,0 +1,9 @@
+{
+  "templeMsApp": {
+    "AddressType": {
+      "null": "",
+      "PERMENENT": "PERMENENT",
+      "CURRENT": "CURRENT"
+    }
+  }
+}
